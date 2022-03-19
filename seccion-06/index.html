@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Texto y Tipografias</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Diplomata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
+</head>
+<body>
+    <article>
+        <h1>Texto y tipografias</h1>
+        <section>
+            <h2>I</h2>
+            <p>
+                A los tipos de letra que existen se les denomina fuente o tipografía.<br />
+                Podemos dividirlo en dos grupos:<br /> <dd>
+                    -Familias tipográficas: Fuentes específicas con nombre (Arial, Times New Roman, Verdana,...)<br />
+                    -Familias genéricas: Fuentes según sus características (serif, sans-serif, cursive,...)<br />
+                </dd>
+                Cuando elegimos una fuente debemos poner fuentes de reserva.<br />
+                <code>body{<br />
+                font-family: 'Times New Roman', Times, serif;<br />
+                }<br /></code>
+                Si una fuente tipografíca tiene más de una palabra separada por espacios en su nombre deberá ir entre comillas.<br />
+                Las propiedades para cambiar el estilo de las fuentes/textos son:<br /> <dd>
+                    .font-family: Establece la familia tipografíca.<br />
+                    .font-size: Establece el tamaño de la fuente. (Se define en px, em, rem, %, vh, vw, vimn y vmax)<br />
+                    .font-wieght: Establece el grosor de la fuente.<br />
+                    .font-style: Establece el estilo de la tipografía.<br />
+                    .text-transform: Transforma el texto a mayúsculas, minúsculas, etc.<br />
+                    .text-align: Alinea el texto del elemento a la izquierda, derecha, centro, etc. SOLO ELEMENTOS DE BLOQUE y botones.<br />
+                    .text-decoration: Establece la decoración del texto.<br />
+                    .text-indent: Mueve la primera linea de un texto. SOLO ELEMENTOS DE BLOQUE.<br />
+                    .line-height: Establece la altura de linea.<br />
+                    .letter-spacing: Establece la separación de las letras con una medida en cualquier unidad.<br />
+                </dd>
+            </p>
+            <div>
+                <h1 class="title">Soy un titulo</h1>
+                <p class="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, modi rerum. Odit perferendis quos molestias quod doloribus consectetur obcaecati cupiditate nemo ex voluptatem, rem ratione ducimus numquam eaque sed sapiente? <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse vero voluptate numquam consequuntur id aperiam eligendi quis, quaerat minima accusamus porro praesentium vel iure ratione quos. Aspernatur, eligendi eum. Tempora?</span> </p>
+                <button class="btn">Soy un botón</button>
+                <div class="box">
+                    <div class="boxItem1">Item 1</div>
+                    <div class="boxItem2">Item 2</div>
+                </div>
+                <a href="#" class="link">Soy un link</a>
+            </div>
+        </section>
+        <section>
+            <h2>Google Iconos</h2>
+            <p>Ejemplo<code>link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined"</code><br />
+            <code>
+                link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+"Categoria del icono""
+            </code><br />
+            Si vas a usar una gran cantidad de iconos en tu web compensa usar una librería. Si sólo usarás unos pocos es mejor descargarlos en formato svg y utilizarlos como imágenes.
+            </p>
+            <span class="material-icons-outlined">
+                home
+                </span>
+        </section>
+        <section>
+            <h2>Font face</h2>
+            <p></p>
+        </section>
+    </article>
+</body>
+</html>

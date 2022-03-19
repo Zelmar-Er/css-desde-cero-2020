@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Listas, tablas, imagenes y clip path</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1>Listas</h1>
+        <p>Hay tres propiedades para las listas, se pueden aplicar al padre o a los elementos de la lista.
+            <dd>
+                list-style-type: Establece el tipo de viñeta.<br />
+                list-style-position: Hace que las viñetas se coloquen por dentro o por fuera del elemento.<br />
+                list-style-image: Pone una imagen en lugar de una viñeta. No suele usarse.
+            </dd>
+        </p>
+        <ul class="unorder">
+            <li>Lista desordenada Elemento 1</li>
+            <li>Lista desordenada Elemento 2</li>
+            <li>Lista desordenada Elemento 3</li>
+        </ul>
+        <ol class="order">
+            <li>Lista ordenada Elemento 1</li>
+            <li>Lista ordenada Elemento 2</li>
+            <li>Lista ordenada Elemento 3</li>
+        </ol>
+    </article>
+    <article>
+        <h1>Tablas</h1>
+        <p>
+            table-layout: Define como se comportan las dimenciones de una y los anchos de las "columnas". <br /> <dd>
+                automatic: Valor por defecto.<br />
+                fixed: Necesita un width declarado, si no se le da un ancho a cada columna se distribuyen equitativamente.<br />
+            </dd>
+            caption-side: Define donde se coloca el caption de una tabla.<br />
+            <dd>
+                top: Valor por defecto.<br />
+                bottom: Se coloca al pie de la tabla.<br />
+            </dd>
+            border-spacing: Controla el espacio entre las celdas, recibe una medida en cualquier unidad.<br />
+            bordel-collapse: Controla si las celdas se mantienen juntas o separadas.<br />
+            <dd>
+                separate: Valor por defecto.<br />
+                collapse: Junta las celdas 
+            </dd>
+            empty-cells: Controla qué hacer con las celdas vacías.<br />
+            <dd>
+                show: Valor por defecto.<br />
+                hide: Oculta las celdas vacías.<br />
+            </dd>
+        </p>
+        <div class="tableContainer">
+            <table class="tableUno">
+                <caption>Titulo de la Tabla</caption>
+                <colgroup>
+                    <col class="col1">
+                    <col class="col2">
+                    <col class="col3">
+                </colgroup>
+                <thead>
+                    <th class="tableHead">Titulo 1</th>
+                    <th class="tableHead">Titulo 2</th>
+                    <th class="tableHead">Titulo 3</th>
+                </thead>
+                <tbody>
+                    <tr class="tableRow">
+                        <td class="tableData">Columna con datos 1</td>
+                        <td class="tableData">Columna con datos 2</td>
+                        <td class="tableData">Columna con datos 3</td>
+                    </tr>
+                    <tr class="tableRow">
+                        <td class="tableData">Columna con datos 1</td>
+                        <td class="tableData">Columna con datos 2, esta tiene más</td>
+                        <td class="tableData">Columna con datos 3</td>
+                    </tr>
+                    <tr class="tableRow">
+                        <td class="tableData">Columna con datos 1</td>
+                        <td class="tableData"></td>
+                        <td class="tableData">Columna con datos 3</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="tableDos">
+                <caption>Titulo de la 2° Tabla</caption>
+                <colgroup>
+                    <col class="SegCol1">
+                    <col class="SegCol2">
+                    <col class="SegCol3">
+                </colgroup>
+                <thead>
+                    <th class="tableDosHead">Titulo 1</th>
+                    <th class="tableDosHead">Titulo 2</th>
+                    <th class="tableDosHead">Titulo 3</th>
+                </thead>
+                <tbody>
+                    <tr class="SegTableRow">
+                        <td class="tableDosData">Columna con datos 1</td>
+                        <td class="tableDosData">Columna 2</td>
+                        <td class="tableDosData">Columna 3</td>
+                    </tr>
+                    <tr class="SegTableRow">
+                        <td class="tableDosData">Columna con datos 1</td>
+                        <td class="tableDosData">Columna 2</td>
+                        <td class="tableDosData">Columna 3</td>
+                    </tr>
+                    <tr class="SegTableRow">
+                        <td class="tableDosData">Columna con datos 1</td>
+                        <td class="tableDosData">Columna 2</td>
+                        <td class="tableDosData">Columna 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+    <article>
+        <h1>Imágenes</h1>
+        <p>
+            No existen propiedades para imágenes en CSS.<br />
+            1. Imágenes responsive. En el archivo base se recomienda poner esta regla.<br />
+            <code>img:{<dd>max-width: 100%;</dd>}</code><br />
+            2. Las imágenes por defecto son elementos inline, esto causa un espacio por debajo debido a su line-height, se puede solucionar de dos formas.<br />
+            Dando un line-height: 0 al contenedor o un display:block a la imágen.<br />
+            3. Centrado horizontal.<br />
+            Imagen con display:block y márgenes laterales automáticos.<br />
+            text-align:center, si la imágen no es block.<br />
+            4. Centrado vertical.<br />
+            Flexbox (la mejor opción).<br />
+            vertical-align:middle. A la imagen y al texto.
+        </p>
+        <div class="imgUnoContainer">
+            <figcaption>Imagen responsive</figcaption>
+            <img class="imgUno" src="unsplash.jpg" alt="">
+        </div>
+        <div class="imgContainerFlex">
+            <div class="imgDosContainer">
+                <figcaption>Imagen horizontal con flexbox</figcaption>
+                <img class="imgDos" src="ballena.png" alt="">
+            </div>
+            <span>Texto de relleno para el ejemplo.</span>
+        </div>
+    </article>
+    <article>
+        <h1>object-fit, object-position y filter()</h1>
+        <p>
+            object-fit: se usa para especifícar cómo se debe cambiar el tamaño de &lt;img&gt; o &lt;video&gt; para que se ajuste a su contenedor. <dd>
+                fill: valor por defecto.<br />
+                contain: El contenido se ajustará hasta rellenar de forma horizontal o vertical el contenedor sin deformarse.<br />
+                cover: El contenido se ajustará hasta rellenar de forma horizontal y vertical el contedor sin deformarse.<br />
+                none: El contenido no se redimensiona y mantiene su tamaño original mostrando solo el trozo de las dimenciones especificadas.<br />
+                scale-down: Selecciona el menor de la comparación entre none y contain.
+            </dd>
+            object-position: Coloca la imagen cuando esta no se muestra completa en el contenedor.<br />
+            filter(): <dd>
+                none.<br />
+                blur(px): desenfoca la imagen.<br />
+                brightness(%): Ajusta el brillo de la imagen siendo 1 el original. De 0 a 1 dan oscuridad y de 1 a n dan sobreexposición.<br />
+                contrast(%): Ajusta el contraste de la imagen siendo 1 el original. De 0 a 1 es negro y de 1 a n dan más contraste.<br />
+                drop-shadow(h-shadow v-shadow blur spread color): Aplica una sombra paralela a la imagen.<br />
+                grayscale(%): Convierte la imagen a scala de grises, 0 es el original y 1 sería blanco y negro completamente.<br />
+                hue-rotate(deg): Añade matiz de color a la imagen. Se da valor según la rueda cromática. El valor máximo es 360deg.<br />
+                inver(%): Invierte el color de la imagen. Saca un negativo. 0 es el valor por defecto y 1 es totalmente invertida.<br />
+                opacity(%): Controla la opacidad de la imagen. 1 es el valor por defecto y 0 es transparente.<br />
+                saturate(%): Controla la saturación de color de la imagen. 1 es el valor por defecto, 0 es totalmente desaturada y por encima de 1 se sobresatura.<br />
+                sepia(%): Aplica un tono sepia a la imagen. 0 es el valor por defecto y 1 es totalmente sepia.
+            </dd>
+        </p>
+        <div class="img-contenedor">
+            <div class="img-cont"><img class="imagen1" src="ballena.png" alt=""></div>
+            <div class="img-cont"><img class="imagen2" src="unsplash.jpg" alt=""></div>
+            <div class="img-cont"><img class="imagen3" src="caca.png" alt=""></div>
+        </div>
+    </article>
+    <article>
+        <h1>clip-path</h1>
+        <p>
+            clip-path: Es una máscara que oculta partes de una caja.
+            <dd>
+                circle(): dibuja un círculo, puede tener una medida fija, circle(100px) o podemos especificar un centro con at, circle(100px at medidaX medidaY | palabrasClavesX(left right) palabrasClavesY(top bottom))<br />
+                ellipse(): dibuja una elipse, funciona igual que círculo, pero en este caso debemos especificar 2 centros, el horizontal y el vertical.<br />
+                inset(): dibuja un borde transparente por dentro de la caja, inset(all| Y X |top bottom | top left bottom right), existe la opción de redondear las esquinas, para ello despúes de los valores inset pondremos around, inset(*** round all | top-left bottom-right top-right bottom-left | top-left top-right & bottom-left bottom-right top-left top-right bottom-right bottom-left)<br />
+                polygon(): Especifica una especie de puntos (mínimo 3) para definir la zona visible siendo el punto 0 0 la esquina superior izquierda, separados por comas.<br />
+                Generador de clip-path: <a href="https://bennettfeely.com/clippy/">https://bennettfeely.com/clippy/</a> 
+            </dd>
+
+        </p>
+        <div class="box">
+            <div class="box-clip"></div>
+        </div>
+        <div class="box">
+            <div class="box-clip1"></div>
+        </div>
+        <div class="box">
+            <div class="box-clip2"></div>
+        </div>
+        <div class="box">
+            <div class="box-clip3"></div>
+        </div>
+    </article>
+</body>
+</html>

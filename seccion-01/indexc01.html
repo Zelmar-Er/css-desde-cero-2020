@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/indexc01.css">
+   <!-- <style>
+         body{
+            background-color:indianred;
+        } 
+         import no es recomendado 
+        @import url(css/indexc01.css)
+    </style> -->
+</head>
+<body>
+    <h1>Conectar CSS y HTML</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dolores, ullam placeat repellat vel saepe quidem. Incidunt ipsum, beatae odit voluptate cumque nostrum ipsam eos similique, eveniet hic quibusdam aliquid!</p>
+    <article>
+        <h2>Width y Height</h2>
+        <div class="block">Elemento de bloque</div>
+        <a href="#" class="line">Elemento de linea</a>
+        <a href="#" class="line">Elemento de linea 2</a>
+    </article>
+    <br />
+    <article>
+        <h2>Margin</h2>
+        <p>
+            <div>
+                Es la propiedad que nos permite generar espacios entre elementos.
+                Es un shorthand (propieda abreviada) que controla los 4 lados posibles a los que dar márgenes.<br />
+                <dd>margin-top: Margen superior.<br />
+                    margin-right: Marges derecho.<br />
+                    margin-bottom: Margen inferior.<br />
+                    margin-left: Margen izquierdo.</dd>
+            </div>
+            <div>
+                Adminte hasta 4 valores que van en el orden de las agujas del reloj.<br />
+                <dd>4 valores -> margin: top right bottom left;<br />
+                    3 valores -> margin: top rigth/left bottom;<br />
+                    2 valores -> margin: top/bottom right/left;<br />
+                    1 valor -> margin: top/right/bottom/left;</dd>
+            </div>
+        </p>
+        <h3>Margin Tip</h3>
+        <p>
+            Con <code>margin-right:auto;</code> y <code>margin-left:auto;</code>, el margen se pegara al margen derecho o izquierdo, segun cual se utiliza y al utilizar ambos el elemento se centrara automaticamente.</p>
+    </article>
+    <article>
+        <h2>Padding</h2>
+        <p>
+            <div>
+                Es la propiedad que nos permite generar espacio entre el borde y la caja.
+                Es un shorthand que controla los 4 lados posibles a los que dar padding.<br />
+                <dd>padding-top: Margen superior.<br />
+                    padding-right: Marges derecho.<br />
+                    padding-bottom: Margen inferior.<br />
+                    padding-left: Margen izquierdo.</dd>
+            </div>
+            <div>
+                <div>
+                    Adminte hasta 4 valores que van en el orden de las agujas del reloj.<br />
+                    <dd>4 valores -> padding: top right bottom left;<br />
+                        3 valores -> padding: top rigth/left bottom;<br />
+                        2 valores -> padding: top/bottom right/left;<br />
+                        1 valor -> padding: top/right/bottom/left;</dd>
+                </div>
+            </div>
+        </p>
+    </article>
+    <article>
+        <h2>Border</h2>
+        <p>
+            Es la propiedad que nos permite el borde de la caja.
+            Es un shorthand que agrupa 3 propiedades.<br />
+            <div>
+                border-width: ancho del borde.<br />
+                <dd>border-top-width<br />
+                    border-right-width<br />
+                    border-bottom-width<br />
+                    border-left-width</dd>
+            </div>
+            <div>
+                border-style: estilo del borde.<br />
+                <dd>border-top-style<br />
+                    border-right-style<br />
+                    border-bottom-style<br />
+                    border-left-style</dd>
+            </div>
+            <div>
+                border-color: color del borde.<br />
+                <dd>border-top-color<br />
+                    border-right-color<br />
+                    border-bottom-color<br />
+                    border-left-color</dd>
+            </div>
+        </p>
+    </article>
+    <article>
+        <h2>Box sizing</h2>
+        <p>
+            Es la propiedad que nos permite controlar el cálculo que hace el navegador a la hora de modificar las propiedades content, padding y border.
+            <div>
+                Los 2 valores que podemos darle son:<br />
+                    <dd>content-box: Valor por defecto.<br />
+                    border-box: Cálculo de tamaño del elemento incluye al padding y el border.</dd>
+            </div>
+        </p>
+    </article>
+    <article>
+        <section>
+            <h2>Border Radius</h2>
+            <h3>Circular</h3>
+            <p>border-radius: Es la propiedad que nos permite redondear vertices de forman independiente.<br />
+            Es un shorthand que engloaba 4 propiedades:<br />
+            <dd>border-top-left-radius -> Radio del borde superior izquierdo.<br />
+                border-top-right-radius -> Radio del borde superior derecho.<br />
+                border-bottom-rigth-radius -> Radio del borde inferior derecho.<br />
+                border-bottom-left-radius -> Radio del borde inferior izquierdo.</dd>
+            <div>
+                Si sólo recibe un valor dibujará un circulo en cada vértice del radio que especifiquemos.
+                <div>Ejemplo: <code>border-radius: 50px;</code> -> Circulo con 50px de radio.</div>
+            </div>
+            <div class="box-Circle"></div>
+            <br />
+            <div>
+                Si utilizamos border-radius como shorthand hay diferencias entre si queremos dar un valor a cada lado (circular) o dos (elipse).
+            </div>
+            </p>
+        </section>
+        <section>
+            <h3>Elipse</h3>
+            <p>
+                Ejemplos de la sintaxis para crear elipses.
+                <div><code>border-top-left-radius: 50px 200px;</code> o <code>border-radius: 25px 50px 75px 100px / 75px 100px 125px 150px;</code></div>
+            </p>
+            <div class="box-Elipse1"></div>
+            <br />
+            <div class="box-Elipse2"></div>
+        </section>
+        <section>
+            <h2>Overflow</h2>
+            <p>
+                Decimos que un contenido se desborda cuando la caja es más pequeña que el contenedor.<br />Overflow:
+                    <dd>
+                        Es la propiedad que controla qué debe hacer la caja cuando su contenido se desborda de su contenedor. Es un shorthand que engloba overflow-x y overflow-y.<br />
+                        Tiene cuatro posibles valores:
+                    </dd>
+                    <div>
+                        <dd>
+                            visible -> Es el valor por defecto.<br />
+                            hidden -> El contenido que se desborde no se verá. Si aplicamos esta propiedad en un solo eje, el otro se pondrá automáticamente en el valor scroll.<br />
+                            scroll -> Aparecerán barras de scroll en el eje asignado (x, y o ambos).<br />
+                            auto -> Aparecerán barras de scroll en el caso de que hicieran falta.
+                        </dd>
+                    </div>
+            </p>
+            <div class="box-overflow">
+                <p class="lorem-flow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo culpa doloremque voluptatibus dolorem fugiat numquam eum quidem maxime, nulla tempore ipsum at animi suscipit et ad fugit explicabo blanditiis. Ea!
+                Veniam quas facere qui adipisci doloribus in quos! Vel, quis, cum sit molestias autem magnam aspernatur, dolores eum quam eius sunt possimus? Aut ut quod recusandae quos accusantium corrupti nihil.
+                Est sapiente nostrum incidunt corporis inventore, fuga ratione nam adipisci numquam consequatur a dicta soluta. Cupiditate sapiente, in quos animi consectetur adipisci quis, saepe corporis suscipit reiciendis vero autem sit.
+                Suscipit officia ipsam dolore nisi, et corporis nihil sapiente cumque fuga obcaecati reprehenderit maiores reiciendis consequatur inventore fugit laudantium quibusdam, numquam officiis ipsa. Ea inventore odio minus aliquam nihil fugiat?
+                Nesciunt magni assumenda voluptatum maiores voluptas? Mollitia, fugiat nisi. Doloribus dolores nulla et fugiat, natus quidem! Aut doloribus placeat unde perferendis ad veniam, sit libero repellat iure ipsam eligendi natus?
+                Necessitatibus nesciunt, delectus voluptate provident molestias, at eaque fuga enim accusantium ullam debitis nostrum praesentium error. Dignissimos minus consequatur rem iste recusandae nihil nesciunt reprehenderit repellat sit, veritatis quasi quae.
+                Magni recusandae non saepe architecto commodi laudantium, labore voluptates numquam ad. Incidunt distinctio molestias officiis, ipsam quo aut magnam voluptate repellendus omnis! Nemo blanditiis labore nesciunt laborum ad eos quidem?</p>
+            </div>
+        </section>
+        <section>
+            <h2>Display</h2>
+            <p>
+                La propiedad display nos sirve para para cambiar el contexto de los elementos dentro del navegador.<br />
+                Admite los valores:
+                <dd>
+                    none -> Hace que el elemento no se muestre, pero sigue cargándose.<br />
+                    block -> Hace que el elmento sea de bloque.<br />
+                    inline -> Hace que el elemento sea de linea.<br />
+                    inlene-block -> Hace que el elemento sea de linea pero admite medidas y márgenes verticales.
+                </dd>
+            </p>
+            <a href="#" class="linea-bloque">Elemento en linea convertido a bloque 1</a>
+            <a href="#" class="linea-bloque">Elemento en linea convertido a bloque 2</a>
+            <p class="bloque-linea">Elemento en bloque convertido a linea 1</p>
+            <p class="bloque-linea">Elemento en bloque convertido a linea 2</p>
+            <a href="#" class="display-mixto">Elementos en linea con propiedades en de elementos en bloque 1</a>
+            <a href="#" class="display-mixto">Elementos en linea con propiedades en de elementos en bloque 2</a>
+        </section>
+        <section>
+            <h2>Outline</h2>
+            <div class="border">Border</div>
+            <div class="outline">Outline</div>
+            <p>
+                Outline es la propiedad que nos permite dibujar un borde por fuera del modelo de caja.<br />
+                Es un shorthand que engloba: <dd>
+                    outline-width: Controla el ancho del outline.<br />
+                    outline-style: Controla el estilo del outline.<br />
+                    outline-color: Controla el estilo del outline.<br />
+                </dd>
+            </p>
+            <p>
+                Tiene la mismas propiedades y sintaxis que border, pero con algunas diferencias.
+                <dd>
+                    No ocupa sitio, ya que no forma parte del box-model.<br />
+                    No se puede redondear.<br />
+                    No se pueden controlar los lados de forma independiente.
+                </dd>
+            </p>
+            <p>
+                Tambíen cuenta con la propiedad <code>outline-offset</code>, que nos permite aumentar o disminuir la distancia del outline en relación a la caja a la que pertenece.
+            </p>
+        </section>
+    </article>
+    <article>
+        <h2>Text align</h2>
+        <p>
+            Text align es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de bloque siempre que el contenido NO TENGA ANCHO DECLARADO.
+            <div>
+                Acepta 4 posibles valores: <dd>
+                    text-align: left; -> Alinea el contenido a la izquierda (por defecto).<br />
+                    text-align: right; -> Alinea el contenido a la derecha.<br />
+                    text-align: cente; -> Alinea el contenido al centro.<br />
+                    text-align: justify; -> Alinea el contenido de forma justificada. No es recomendable usarla.
+                </dd>
+            </div>
+        </p>
+        <p class="text-align">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eaque reiciendis harum sunt doloremque, ipsam possimus praesentium labore. Minima tenetur atque cumque corporis dicta amet dolores magnam consequuntur vitae animi.
+            Reiciendis voluptatem asperiores praesentium amet libero eum ab enim blanditiis cumque, pariatur accusantium consequuntur laboriosam officia voluptatum, iure id tempora illum officiis accusamus architecto rerum delectus? Maxime obcaecati nihil animi.
+        </p>
+        <div class="box-align">
+            Border
+        </div>
+        <a href="#" class="link-align">Soy un enlace</a>
+        <img src="http://placekitten.com/200/200" alt="gatito" class="img-align">
+        <div class="img-container">
+            <img src="http://placekitten.com/250/250" alt="">
+        </div>
+    </article>
+    <article>
+        <h2>Box Shadow</h2>
+        <p>La propiedad box-shadow se creó para añadir efectos de sombra a nuestra caja</p>
+        <p>En esencia lo que hace es crear un clon de la caja respetando la forma de su box-model (ancho, alto, redondez)</p>
+        <p>La sintaxis de box-shadow se puede escribir de distintas formas según lo que queremos conseguir.<br />
+          Los valores que le podemos poner son: <dd>
+              offset-x -> Desplazamiento en x (obligatorio).<br />
+              offset-y -> Desplazamineto en y (obligatorio).<br />
+              blur-radius -> Desenfoque de la sombra.<br />
+              spread-radius -> Expansión de la sombra.<br />
+              color -> El color de la sombra, si no le decimos la heredará del elemento al que pertenece.<br />
+              inset -> Determina si la sombra será interior o exterior.
+          </dd></p>
+        <div class="box-shadow">Box</div>
+        <br />
+        <div class="box-shadow-inset">Box inset</div>
+        <br />
+        <div class="box-shadow-multiple">Box multiple</div>
+    </article>
+</body>
+</html>

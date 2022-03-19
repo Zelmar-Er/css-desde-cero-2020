@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <article>
+        <h1>Responsive</h1>
+        <section>
+            <h2>Responsve Web Design</h2>
+            <p>
+                No es un estándar, no es CSS, es un conjunto de patrones de diseño.<br />
+                Su objetivo es que cualquier página se vea bien independientemente del dispositivo.<br />
+                Los frameworks resuelven ese problema, pero es un error utilizarlos para evitar aprender lo que hay por detrás.<br />
+                Se basa en 3 conceptos fundamentales: <dd>
+                    Columnas fluidas.<br />
+                    Imágenes flexibles: max-width: 100%;<br />
+                    Media querys.
+                </dd>
+                A día de hoy el número de retos a crecido notablemente y se hace "imprescindible" el uso de javascript.<br />
+            </p>
+            <h3>Columnas Fluidas</h3>
+            <p>
+                Para construir un sistema de columnas o de cajas fluidas es tan sencillo como aplicar los anchos en porcentaje.<br />
+                No hay que asignar todos los anchos en porcentaje, solo se aplica a los elementos que necesiten cambiar su tamaño.
+            </p>
+            <h3>Media Querys - Concepto</h3>
+            <p>
+                Son condicionales para que el navegador sepa cómo actuar en función de la condición.<br />
+                all: Apto para todos los dispositivos.<br />
+                print: Destinado a material impreso y visualización del modo de vista previa de impresión.<br />
+                screen: Destinado pricipalmente a las pantallas.<br />
+                speech: Destinado a sintetizadores de voz.<br />
+            </p>
+            <h3>Media Querys - Sintaxis</h3>
+            <p>
+                Sintaxis: @media "tipo de medio" and|or (condición)<br />
+                Las condiciones más utilizadas son min-width, max-width y orientación.<br />
+                Ejemplos: <dd>
+                    @media screen and (min-width: 360px)<br />
+                    @media screen and (max-width: 1024px) and (orientation: landscape)<br />
+                    @media screen and (max-width: 480px) or (orientation: portrait)
+                </dd>
+            </p>
+            <h3>Metodologías</h3>
+            <p>
+                Mobile-first: Consiste en hacer primero el diseño móvil e ir subiendo de tamaño.<br />
+                Desktop-first: Consiste en hacer primero el diseño de escritorio e ir bajando de tamaño.<br />
+                Content-first: Consiste en saber primero todo el contenido de la wib y después se hace el diseño.
+            </p>
+        </section>
+        <section>
+            <h2>Responsive sin breakpoints ni media querys</h2>
+            <p>
+                
+            </p>
+            <div class="containerR">
+                <header class="header">
+                    <div class="banner">Banner</div>
+                </header>
+                <div class="flexboxR gridR">
+                    <p class="flexbox-itemR grid-itemR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sit, asperiores soluta atque magnam modi perspiciatis error magni, et sequi laudantium quisquam nisi nostrum maiores exercitationem ut. Numquam, nemo temporibus.
+                    Unde sed rerum magnam maiores tempore? Molestiae eum quod nam dignissimos explicabo quo eos ducimus cumque eius unde eaque, neque cum voluptatibus veritatis laudantium quis, porro rem numquam. Nihil, dolor!</p>
+                    <p class="flexbox-itemR grid-itemR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sit, asperiores soluta atque magnam modi perspiciatis error magni, et sequi laudantium quisquam nisi nostrum maiores exercitationem ut. Numquam, nemo temporibus.
+                    Unde sed rerum magnam maiores tempore? Molestiae eum quod nam dignissimos explicabo quo eos ducimus cumque eius unde eaque, neque cum voluptatibus veritatis laudantium quis, porro rem numquam. Nihil, dolor!</p>
+                    <p class="flexbox-itemR grid-itemR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sit, asperiores soluta atque magnam modi perspiciatis error magni, et sequi laudantium quisquam nisi nostrum maiores exercitationem ut. Numquam, nemo temporibus.
+                    Unde sed rerum magnam maiores tempore? Molestiae eum quod nam dignissimos explicabo quo eos ducimus cumque eius unde eaque, neque cum voluptatibus veritatis laudantium quis, porro rem numquam. Nihil, dolor!</p>
+                    <p class="flexbox-itemR grid-itemR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sit, asperiores soluta atque magnam modi perspiciatis error magni, et sequi laudantium quisquam nisi nostrum maiores exercitationem ut. Numquam, nemo temporibus.
+                    Unde sed rerum magnam maiores tempore? Molestiae eum quod nam dignissimos explicabo quo eos ducimus cumque eius unde eaque, neque cum voluptatibus veritatis laudantium quis, porro rem numquam. Nihil, dolor!</p>
+                    <p class="flexbox-itemR grid-itemR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sit, asperiores soluta atque magnam modi perspiciatis error magni, et sequi laudantium quisquam nisi nostrum maiores exercitationem ut. Numquam, nemo temporibus.
+                    Unde sed rerum magnam maiores tempore? Molestiae eum quod nam dignissimos explicabo quo eos ducimus cumque eius unde eaque, neque cum voluptatibus veritatis laudantium quis, porro rem numquam. Nihil, dolor!</p>
+                    <p class="flexbox-itemR grid-itemR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sit, asperiores soluta atque magnam modi perspiciatis error magni, et sequi laudantium quisquam nisi nostrum maiores exercitationem ut. Numquam, nemo temporibus.
+                     Unde sed rerum magnam maiores tempore? Molestiae eum quod nam dignissimos explicabo quo eos ducimus cumque eius unde eaque, neque cum voluptatibus veritatis laudantium quis, porro rem numquam. Nihil, dolor!</p>
+                </div>
+                <footer class="footer">Footer</footer>
+            </div>
+        </section>
+        <section>
+            <h2>Videos Responsive</h2>
+            <p>
+                La forma más común es hacer un padding-bottom de 56.25%, éste número es el resultado de la operación (9/16) es decir un fotmato 16:9, esto da como resultado 0.5625 si lo multiplicamos por 100 el resultado es 56.25.
+            </p>
+            <div class="containerVR">
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gSdLH9kgR7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Breakpoints</h2>
+            <p>
+                Breakpoints: Existen dos tipos de breakpoints, los major breakponints y los minor breakpoints. <dd>
+                    Los major breakpoints son los que cambian la apariencia de la web de forma significativa.<br />
+                    Los minor breakpoints son los que cambian una cosa específica para un elemento en concreto.
+                </dd>
+                Medidas más comunes: <dd>
+                    0 - 320px - 360px: Móviles portrait.<br />
+                    480px - 640px - 768px: Móviles landscape - tablets.<br />
+                    1024px - 1200px - 1400px - 1440px: Tablets grandes, portátiles no HD.<br />
+                    1920px - hacia arriba: HD, 2k, 4k...
+                </dd>
+            </p>
+            <div class="menu">
+                <ul class="uList">
+                    <li class="list-Item">Item 1</li>
+                    <li class="list-Item">Item 2</li>
+                    <li class="list-Item">Item 3</li>
+                    <li class="list-Item">Item 4</li>
+                </ul>
+            </div>
+        </section>
+    </article>
+</body>
+</html>

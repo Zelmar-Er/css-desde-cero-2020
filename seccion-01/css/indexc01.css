@@ -1,0 +1,136 @@
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.block{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    margin: 100px 75px 50px 25px;
+    padding: 50px 25px;
+}
+/* Los elementos en linea no tienen medidas a traves de width y height. Solo peseen margen horizontal*/
+.line{
+    background-color: lightcoral;
+    color: inherit;
+    margin-left: 100px;
+    padding: 100px 75px 50px 25px;
+}
+.box-Circle{
+    width: 100px;
+    height: 100px;
+    background-color: fuchsia;
+    border-radius: 50px;
+}
+.box-Elipse1{
+    width: 100px;
+    height: 100px;
+    background-color: fuchsia;
+    border-top-left-radius: 50px 200px;
+}
+.box-Elipse2{
+    width: 100px;
+    height: 100px;
+    background-color: fuchsia;
+    border-radius: 25px 50px 75px 100px / 75px 100px 125px 150px;
+}
+.box-overflow{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(17, 117, 117);
+    overflow-y: scroll;
+    border-radius: 10%;
+}
+.lorem-flow{
+    padding: 25px;
+}
+/* 31 - Display */
+.linea-bloque{
+    display: block;
+    color: #fff;
+}
+.bloque-linea{
+    display: inline;
+}
+.display-mixto{
+    display: inline-block;
+    color: #aaa;
+    width: 150px;
+}
+/* 32 - Outline */
+.border,
+.outline{
+    background-color: #666;
+    width: 60px;
+    padding: 10px 20px;
+    margin: 50px 100px;
+}
+.border{
+    border: 2px solid lightcoral;
+}
+.outline{
+    outline: 3px inset lightcoral;
+    outline-offset: -13px;
+    border: 3px solid lightgreen;
+}
+/* 33 - Text aling */
+.text-align{
+    text-align: justify;
+}
+.box-align{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 0px;
+    margin: 20px 0px;
+    border: 3px inset lightcoral;
+    text-align: center;
+}
+.link-align{
+    display: block;
+    text-align: center;
+    color: #ddd;
+}
+.img-align{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.img-container{
+    text-align: center;
+}
+/* 34 - Box Shadow */
+.box-shadow{
+    background-color: darkcyan;
+    width: 200px;
+    padding: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    box-shadow: 10px 15px 10px;
+}
+.box-shadow-inset{
+    background-color: darkcyan;
+    width: 200px;
+    padding: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    box-shadow: inset 10px -15px rgb(12, 107, 107) ;
+}
+.box-shadow-multiple{
+    background-color: darkcyan;
+    width: 200px;
+    padding: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    box-shadow: 5px -5px red, 10px -10px blue, 15px -15px green, 20px -20px yellow;
+}
+
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1>Flexbox</h1>
+    <section>
+        <h2>Fundamentos</h2>
+        <p>
+            Es un modelo de layout que permite que las cajas sean flexibles, es un valor  de la propiedad display.<br />
+            Existe <code>display: flex</code> y <code>display: inline-flex</code> para que el contenedor sea bloque o linea respectivamente.<br />
+            Se necesita un contenedor (flex-container) y al menos un hijo (flex-item).<br />
+            Las cajas flexibles son los items, el contenedor es el contexto al que pertenecen los items.
+        </p>
+        <div class="flex-container">
+            flex-container
+            <div>
+                <div class="flex-item">flex-item</div>
+                <div class="flex-item">flex-item</div>
+                <div class="flex-item">flex-item</div>
+            </div>
+        </div>
+        <h3>Flexbox ejes</h3>
+        <p>
+            Existen dos ejes para colocar y alinear elementos.<br />
+            Por defecto el eje principal es horizontal y de izquierda a derecha y el eje secundario es vertical de arriba abajo.<br />
+            Se pueden intercambiar los ejes y la dirección de ambos.
+        </p>
+    </section>
+    <section>
+        <h2>Flex-direction y flex-wrap</h2>
+        <p>
+            display: flex <dd>
+                Convierte al contenedor en un contexto para flex y hace que el contenedor sea un elemento de bloque para los elementos que lo rodean.
+            </dd>
+            display: inline-flex <dd>
+                Convierte al contenedor en un contexto para flex y hace que el contenedor sea un elemento en línea para los elementos que lo rodean.
+            </dd>
+            flex-direction: row(default) | row-reverse | column | column-reverse <dd>
+                Modifica la dirección y cual es el eje principal. Por defecto es row (horizontal de izquierda a derecha). <br />
+                row-reverse ( horizontal de derecha a izquierda). <br />
+                column vertical de arriba abajo. <br />
+                column-reverse vertical de abajo arriba.
+            </dd>
+            flex-wrap: no-wrap(default) | wrap | wrap-reverse <dd>
+                Controla si los elemento saltarán de línea o no <br />
+                no-wrap es el valor por defecto, un contenedor flex va a hacer que todos los elementos se queden en una línea si no le especificamos lo contrario. <br />
+                wrap hace que los elementos que no quepan en una línea (mateniendo sus dimensiones, si las tuvieran) salten a la línea inferior.<br />
+                wrap-reverse hace los mismo que wrap, pero en lugar de hacer que salten a la línea inferior, hace que salten a la línea superior.
+            </dd>
+        </p>
+        <span>Números</span>
+        <div class="flexContainer flexNumber">
+            <div class="flexItem numberItem">1</div>
+            <div class="flexItem numberItem">2</div>
+            <div class="flexItem numberItem">3</div>
+            <div class="flexItem numberItem">4</div>
+            <div class="flexItem numberItem">5</div>
+            <div class="flexItem numberItem">6</div>
+            <div class="flexItem numberItem">7</div>
+            <div class="flexItem numberItem">8</div>
+            <div class="flexItem numberItem">9</div>
+            <div class="flexItem numberItem">10</div>
+        </div>
+        <div class="flexContainer flexNumber2">
+            <div class="flexItem numberItem">1</div>
+            <div class="flexItem numberItem">2</div>
+            <div class="flexItem numberItem">3</div>
+            <div class="flexItem numberItem">4</div>
+            <div class="flexItem numberItem">5</div>
+            <div class="flexItem numberItem">6</div>
+            <div class="flexItem numberItem">7</div>
+            <div class="flexItem numberItem">8</div>
+            <div class="flexItem numberItem">9</div>
+            <div class="flexItem numberItem">10</div>
+        </div>
+        <span>Latras</span>
+        <div class="flexContainer flexAphabet">
+            <div class="flexItem alphabetItem">A</div>
+            <div class="flexItem alphabetItem">B</div>
+            <div class="flexItem alphabetItem">C</div>
+            <div class="flexItem alphabetItem">D</div>
+            <div class="flexItem alphabetItem">E</div>
+            <div class="flexItem alphabetItem">F</div>
+            <div class="flexItem alphabetItem">G</div>
+            <div class="flexItem alphabetItem">H</div>
+            <div class="flexItem alphabetItem">I</div>
+            <div class="flexItem alphabetItem">J</div>
+        </div>
+    </section>
+    <section>
+        <h2>Alineamiento</h2>
+        <p>
+            Estas propiedades para alinear se aplican SIEMPRE al flex-container.<br />
+            Existen propiedades para el main-axis y el cross-axis.<br />
+            main-axis: <dd>
+                justify-content: flex-start(default) | center | space-between | space-around | space-evenly | flex-end<br />
+                flex-start, alinea los elementos al principio del main-axis.<br />
+                center, centra los elementos en la mitad del main-axis.<br />
+                flex-end, alinea los elementos al final del main-axis.<br />
+                space-between, distribuye los items a la misma distacia y no deja espacio exterior ni el primer ni el último flex-end.<br />
+                space-around, distribuye los items a la misma distacia y deja un espacio exterior en el primero y el último flex-item.<br />
+                space-evenly, distribuye los items y los espacios exteriores del priemer y último flex-item dejando la misma distacia entre todos.<br />
+            </dd>
+            cross-axis: <dd>
+                align-items: Una sola linea.<br />
+                flex-start | center | flex-end | stretch(default) | baseline <br />
+                align-content: varias líneas.<br />
+                flex-start | center | flex-end | stretch(default) | baseline <br />
+                align-self: Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross-axis.
+            </dd>
+        </p>
+        <div class="flex-containerA">
+            <div class="flex-itemA">1</div>
+            <div class="flex-itemA">2</div>
+            <div class="flex-itemA">3</div>
+            <div class="flex-itemA">4</div>
+            <div class="flex-itemA">5</div>
+            <div class="flex-itemA">6</div>
+            <div class="flex-itemA">7</div>
+            <div class="flex-itemA">8</div>
+            <div class="flex-itemA">9</div>
+            <div class="flex-itemA">10</div>
+        </div>
+        <div class="boxA">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi esse, qui natus officiis voluptatem facilis omnis. Temporibus nisi commodi dolore delectus in, ea iure dolorem eos quod facilis, quo nostrum?</p>
+            <img src="caca.webp" alt="">
+        </div>
+        <div class="prices">
+            <div class="prices_item">
+                <h2 class="prices_title">Table 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat incidunt voluptas accusantium mollitia magnam consectetur dolor nobis aliquid atque aut neque quaerat, earum repudiandae possimus quas doloremque commodi, sint provident.</p>
+            </div>
+            <div class="prices_item">
+                <h2 class="prices_title">Table 2</h2>
+                <p>Repellat incidunt voluptas accusantium mollitia magnam consectetur dolor nobis aliquid atque aut neque quaerat, sint provident.</p>
+            </div>
+            <div class="prices_item">
+                <h2 class="prices_title">Table 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat incidunt voluptas accusantium mollitia magnam consectetur dolor nobis aliquid atque aut neque quaerat, earum repudiandae possimus quas doloremque commodi, sint provident.</p>
+            </div>
+            <div class="prices_item">
+                <h2 class="prices_title">Table 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat incidunt voluptas accusantium mollitia magnam consectetur dolor nobis aliquid atque aut neque quaerat.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>flex-grow, flex-shrink, flex-basis, flex-flow y order</h2>
+        <p>
+            Propiedad flex: Es un shorthand que engloba las siguientes propiedades.<br />
+            Todas las medidas se establecen en función del espacio disponible en el contenedor. <dd>
+                flex-grow: Establece qué hacer cuando hay espacio sobrante. Cuantas diviciones coje el elemento. El valor es un entero desde 0 hasta n o auto.<br />
+                flex-shrink: Establece qué hacer cuando no hay espacio suficiente. Cuantas diviciones pierde el elemento. El valor es un entero desde 0 hasta n.<br />
+                flex-basis: Establece cuanto tiene que ocupar el item antes de encojer o extenderse. Flex-basis prebalece ante width, si el main-axis es horizontal o ante height si el main-axis en vertical. El valor es un entero desde 0 hasta n.
+            </dd>
+            Los valores flex son: <dd>
+                Por defecto 0 1 auto.<br />
+                auto: 1 1 auto.<br />
+                none: 0 0 auto.<br />
+            </dd>
+            Order: Establece qué orden ocupará el elemento en ele contenedor flex. El valor es el "peso" respecto a los valores que tengan los otros elementos. Por defecto es 0.<br />
+            Extra: <dd>Existe un shorthand para flex-direction y flex-wrap. <code>flex-flow: flex-direction flex-wrap</code>, <code>flex-flow: column wrap;</code> </dd>
+        </p>
+        <div class="flex-containerB">
+            <div class="flex-itemB">1</div>
+            <div class="flex-itemB">2</div>
+            <div class="flex-itemB">3</div>
+            <div class="flex-itemB">4</div>
+            <div class="flex-itemB">5</div>
+        </div>
+        <div class="flex-subcontainerB">
+            <div class="flex-itemSuB">A</div>
+            <div class="flex-itemSuB">B</div>
+            <div class="flex-itemSuB">C</div>
+            <div class="flex-itemSuB">D</div>
+            <div class="flex-itemSuB">E</div>
+        </div>
+    </section>
+    </article>
+</body>
+</html>

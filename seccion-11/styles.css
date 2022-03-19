@@ -1,0 +1,106 @@
+body{
+    background: #eee;
+}
+/* Responsive sin breakpoints ni media querys */
+
+/* body{min-height: 100vh; display: flex; flex-direction: column; } 
+o body{min-height: 100vh; display: grid} 
+y footer{ margin-top: auto; }
+Pocicionan al footer abajo de la pagina
+*/
+.containerR{
+    margin: 0;
+    font-family: sans-serif;
+    background-image: radial-gradient(circle,#b94bf8,#3a1957);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.banner{
+    background-color: royalblue;
+    padding: 15vmin; /* el banner toma su medida segun el viewport */
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+.footer{
+    background-color: red;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: auto;
+}
+/* responsive con flexbox */
+
+/* .flexboxR{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexbox-itemR{
+    margin: 2rem;
+    min-width: 320px;
+    flex: 1 1 320px;
+} */
+
+/* responsice con grid */
+
+.gridR{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px, 1fr));
+    grid-gap: 2rem;
+}
+
+/* Videos responsive */
+
+.containerVR{
+    margin: 0 auto;
+    width: 80%;
+    background-color:aqua;
+    min-width: 320px;
+    max-width: 1400px;
+}
+.video{
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+.video iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Breakpoints */
+
+.menu{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+@media screen and (min-width: 360px){
+    .menu{
+        font-size: 1rem;
+        background-color: royalblue;
+    }
+}
+@media screen and (min-width: 640px){
+    .menu{
+        font-size: 2rem;
+        background-color: blueviolet;
+    }
+    /* menu horizontal */
+    .uList{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+@media screen and (min-width: 1024px){
+    .menu{
+        background-color:darkcyan;
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,72 @@
+body{
+    background: #eee;
+}
+/* Colores */
+.box{
+    width: 215px;
+    height: 200px;
+    border: 1px solid black;
+    margin: .5em;
+    text-align: center;
+    line-height: 200px;
+    font-size: 2.5em;
+    display: inline-block;
+}
+
+.box-color{
+    color: lime;
+    background: purple;
+}
+.box-hexa{
+    color: #05fa8d;
+    background: #777;
+}
+.box-rgb{
+    color: rgb(250,220,210);
+    background: rgb(123,240,87);
+}
+.box-rgba{
+    color: rgba(250,220,210,0.5);
+    background: rgba(123,240,87,0.8);
+}
+.box-hsl{
+    color: hsl(185, 70%, 50%);
+    background: hsl(289, 30%, 60%);
+}
+.box-hsla{
+    color: hsla(185, 70%, 50%, 0.3);
+    background: hsla(289, 30%, 60%, 0.4);
+}
+/* Sombras */
+.box-shadow{
+    box-shadow: 10px 10px 10px 5px, inset 10px 10px 10px 5px grey;
+}
+.box-shadow1{
+    box-shadow: 0 0 0 5px, 0 0 0 10px green, inset 0 0 0 5px red, inset 0 0 0 10px blue;
+}
+.text-shadow{
+    text-shadow: 5px 5px 2px red, -2px -2px 2px blue, -5px -5px 2px green, -8px -8px 2px purple;
+}
+.text-shadow1{
+    text-shadow: 5px 5px 10px;
+}
+/* Degradados */
+.linear{
+    background-image: linear-gradient(to top right, yellow, red, blue, orange);
+}
+.solid{
+    background-image: linear-gradient(red 30%, green 30% 60%, purple 90%);
+}
+.radial{
+    background-image: radial-gradient( circle 100px at top , red 50%, blue 50%);
+}
+.radial2{
+    background-image: radial-gradient( ellipse 250px 100px at right, red , blue );
+}
+.repeticion{
+    background-image: radial-gradient( ellipse 20px 20px at right, red , blue );
+    background-size: 50px 50px;
+}
+.repeticion2{
+    background-image: repeating-radial-gradient( circle 20px, red , blue );
+}

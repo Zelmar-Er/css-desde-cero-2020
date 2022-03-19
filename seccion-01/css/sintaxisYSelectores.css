@@ -1,0 +1,44 @@
+/*      Sintaxis
+    Selector: El elemento al que vamos a aplicar estilos.
+    Propiedad: Lo que vamos a cambiar.
+    Valor: El nuevo valor que le vamos a dar a la propiedad.
+    Propieda:Valor -> Se le denomina declaraciones.
+    Al conjunto de selector+declaracion(es) se le denomina ragla.
+
+    Ejemplo:
+            selector{
+                propieda:valor;
+            }
+*/
+
+/*      Tipos de selectores
+    Selectores simples:
+            *Selectores elementales:
+                Selector universal -> *
+                Selector de tipo o etiqueta -> Nombre de la etiqueta
+            *Selectores de atributo
+                id -> id del elemento
+                clase -> clase del elemento
+                otro atributo -> 
+                    [atributo] o [atributo=valor]
+                    [atributo^=valor], si el atributo comienza con el valor (alt + 94).
+                    [atributo*=valor], sin importar en que parte este el valor.
+                    [atributo$=valor], si termina con dicho valor.
+                    [atributo|=valor], se utiliza para el odioma atributo lang.
+    Selectores compuestos:
+            *Selectores agrupados -> Los selectores con igual estilo se agrupan separados por una coma. Ej: selector,
+                selector2,
+                selector3{
+                    propiedad:valor;
+                }
+
+            *Selectores combinadores
+                Selector decendiente -> Se pone los selectores en orden de anidamiento. Ej: padre hijo + declaración. No es recomendable bajar más de dos niveles, por temas de especificidad.
+                
+                Selector de hermano siguiente -> Se utiliza el simbolo + para seleccionar solo el hermano directo. Ej: selector1 + selector2{ declaración}.
+
+                Selector de harmanos siguientes -> ~ (alt + 126), selecciona todos los hermanos que coincidan con la selección.
+
+                Selector de hijo directo -> > selecciona solo los hijos directos.
+            *Pseudoclases - Pseudoelementos
+*/

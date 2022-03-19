@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1>Grid</h1>
+        <section>
+            <h2>Fundamentos de Grid</h2>
+            <p>
+                Es un modelo de layout que permite construir grillas o cuadrículas dinámicas. Es un valor de la propiedad display.<br />
+                Al igul que con flexbox, tenemos display:grid y display:inline-grid.<br />
+                Se necesita un contenedor (grid-container) y al menos un hijo (grid-item).<br />
+                Las celdas son los items, el contenedor es el contexto al que pertenecen los items.
+            </p>
+            <div class="container-f">
+                <div class="elemento-f">A</div>
+                <div class="elemento-f">B</div>
+                <div class="elemento-f">C</div>
+                <div class="elemento-f">D</div>
+                <div class="elemento-f">E</div>
+                <div class="elemento-f">F</div>
+                <div class="elemento-f">G</div>
+                <div class="elemento-f">H</div>
+                <div class="elemento-f">I</div>
+                <div class="elemento-f">J</div>
+                <div class="elemento-f">K</div>
+                <div class="elemento-f">L</div>
+            </div>
+            <p>
+                grid column: Es cada columna de de nuestra cuadrícula.<br />
+                grid row: Es cada fila de nuestra cuadrícula.<br />
+                grid cell: Es cada celda de nuestra cuadrícula.<br />
+                grid gap: Es la separación entre las celdas.<br />
+                grid line: Existen culumn lines y row lines, son las líneas que delimitan cada columna/fila respectivamente.
+            </p>
+            <div class="container-g">
+                <span class="column-line">Column Line</span><span class="row-line">Row Line</span>
+                <div class="container-grid">
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                    <div class="cell-g">Grid cell</div>
+                </div>
+            </div>
+            <p>
+                En grid cada celda es dinámica y el resto de la cuadrícula se adapta.<br />
+                Podemos decir donde empieza cada celda y donde acaba, tanto en columna como en fila.<br />
+                Sus posibilidades son inmensas.
+            </p>
+            <div class="grid-containerA">
+                <div class="grid-itemA">A</div>
+                <div class="grid-itemA">B</div>
+                <div class="grid-itemA">C</div>
+                <div class="grid-itemA">D</div>
+                <div class="grid-itemA">E</div>
+                <div class="grid-itemA">F</div>
+                <div class="grid-itemA">G</div>
+                <div class="grid-itemA">H</div>
+                <div class="grid-itemA">I</div>
+                <div class="grid-itemA">J</div>
+                <div class="grid-itemA">K</div>
+                <div class="grid-itemA">L</div>
+            </div>
+        </section>
+        <section>
+            <h2>
+                grid-column y grid-row
+            </h2>
+            <p>
+                Para ordenar elementos tenemos grid-column y grid-row.<br />
+                grid-column-start: establece desde que column-line empezará el elmento.<br />
+                grid-column-end: establece hasta que column-line llega el elmento.<br />
+                grid-row-start: establece desde que row-line empezará el elemento.<br />
+                grid-row-end: establece hasta que row-line llega el elemento.<br />
+                Existe un shorthand que engloba las 2 propiedades.<br />
+                grid-column: start / end;<br />
+                grid-row: start / end;<br />
+                Tanto start como end admiten valores positivos, negativosn y la palabra span.<br />
+                Valor positivo: Empieza a contar las row-lines o las column-lines de izquierda a derecha.<br />
+                Valor negativo: Empieza a contar las row-lines o las column-lines de derecha a izquierda.<br />
+                span: Establecemos cuantas columnas ha de ocupar, span 3 es como decirle que ocupe 3 columnas.<br />
+                TIP si ponemos el valor end -1 llegará hasta el final.
+            </p>
+            <div class="grid-containerGR">
+                <div class="grid-itemGR">A</div>
+                <div class="grid-itemGR">B</div>
+                <div class="grid-itemGR">C</div>
+                <div class="grid-itemGR">D</div>
+                <div class="grid-itemGR">E</div>
+                <div class="grid-itemGR">F</div>
+                <div class="grid-itemGR">G</div>
+                <div class="grid-itemGR">H</div>
+                <div class="grid-itemGR">I</div>
+            </div>
+        </section>
+        <section>
+            <h2>Medidas y repeat()</h2>
+            <p>
+                Medidas de la cuadricula.<br />
+                Se pueden dar medidas con cualquiera de las medidas que ya conocemos y dos más que vienen con grid, fr y auto. <dd>
+                    fr: Equivale a n fracciones del espacio disponible despúes de establecer las medidas fijas.<br />
+                    auto: Equivale al espacio que quede despúes de repartir todos los elementos, es el último que se reparte. El tamaño mínimo del item será el espacio del contenido + el padding si lo tuviera.
+                </dd>
+                Función repeat() <dd>
+                    Con la función repeat podemos establecer repeticiones de medidas o patrones.<br />
+                    En el caso "simple" recibiría 2 parámetros (valores):<br />
+                    repeat(nColumnas o nFilas, medida)<br />
+                    grid-template-columns: repeat(4, 100px) es lo mismo que<br />
+                    grid-template-columns: 100px, 100px, 100px, 100px;<br />
+                    Como segundo valor añadimos más de una medida, construiremos un patrón, no hay límite de valores.<br />
+                    grid-template-columns: repeat(2, 100px 50px...) es lo mismo que<br />
+                    grid-template-columns: 100px 50px 50px 100px;
+                </dd>
+            </p>
+            <div class="grid-containerMD">
+                <div class="grid-itemMD">A</div>
+                <div class="grid-itemMD">B</div>
+                <div class="grid-itemMD">C</div>
+                <div class="grid-itemMD">D</div>
+                <div class="grid-itemMD">E</div>
+                <div class="grid-itemMD">F</div>
+                <div class="grid-itemMD">G</div>
+                <div class="grid-itemMD">H</div>
+                <div class="grid-itemMD">I</div>
+                <div class="grid-itemMD">1</div>
+                <div class="grid-itemMD">2</div>
+                <div class="grid-itemMD">3</div>
+                <div class="grid-itemMD">4</div>
+                <div class="grid-itemMD">5</div>
+                <div class="grid-itemMD">6</div>
+                <div class="grid-itemMD">7</div>
+                <div class="grid-itemMD">8</div>
+                <div class="grid-itemMD">9</div>
+                <div class="grid-itemMD">A</div>
+                <div class="grid-itemMD">B</div>
+                <div class="grid-itemMD">C</div>
+                <div class="grid-itemMD">D</div>
+                <div class="grid-itemMD">E</div>
+                <div class="grid-itemMD">F</div>
+                <div class="grid-itemMD">G</div>
+                <div class="grid-itemMD">H</div>
+                <div class="grid-itemMD">I</div>
+                <div class="grid-itemMD">1</div>
+                <div class="grid-itemMD">2</div>
+                <div class="grid-itemMD">3</div>
+                <div class="grid-itemMD">4</div>
+                <div class="grid-itemMD">5</div>
+                <div class="grid-itemMD">6</div>
+                <div class="grid-itemMD">7</div>
+                <div class="grid-itemMD">8</div>
+                <div class="grid-itemMD">9</div>
+            </div>
+        </section>
+        <section>
+            <h2>implicid grid y explicit grid</h2>
+            <p>
+                Explicit grid: <dd>
+                    Es el grid que declaramos, tanto con <code>grid-template-columns</code> como con <code>grid-template-rows</code>.
+                </dd>
+                Implicid grid: <dd>
+                    Es el grid que no declaramos, los items que quedan fuera del explicit grid.
+                </dd>
+                grid-auto-columns: <dd>
+                    Establece qué hacer con las columnas no defunidas.
+                </dd>
+                grid-auto-rows: <dd>
+                    Establece qué hacer con las filas no definidas.
+                </dd>
+                grid-auto-flow: <dd>
+                    Establece la dirección en la cual se va a pintar el implicid grid.<br />
+                    Admite 3 valores:<br /> 
+                    row(default): Se crearán filas adicionales.<br /> 
+                    column: Se crearán columnas adicionales.<br /> 
+                    dense: Establece que hacer con los huecos que quedan.
+                </dd>
+            </p>
+            <div class="grid-containerIE">
+                <div class="grid-itemIE">A</div>
+                <div class="grid-itemIE">B</div>
+                <div class="grid-itemIE">C</div>
+                <div class="grid-itemIE">D</div>
+                <div class="grid-itemIE">E</div>
+                <div class="grid-itemIE">F</div>
+                <div class="grid-itemIE">G</div>
+                <div class="grid-itemIE">H</div>
+                <div class="grid-itemIE">I</div>
+                <div class="grid-itemIE">J</div>
+                <div class="grid-itemIE">K</div>
+                <div class="grid-itemIE">L</div>
+                <div class="grid-itemIE">M</div>
+                <div class="grid-itemIE">N</div>
+            </div>
+            <h3>Column</h3>
+            <div class="grid-containerIEC">
+                <div class="grid-itemIEC">A</div>
+                <div class="grid-itemIEC">B</div>
+                <div class="grid-itemIEC">C</div>
+                <div class="grid-itemIEC">D</div>
+                <div class="grid-itemIEC">E</div>
+                <div class="grid-itemIEC">F</div>
+                <div class="grid-itemIEC">G</div>
+                <div class="grid-itemIEC">H</div>
+                <div class="grid-itemIEC">I</div>
+                <div class="grid-itemIEC">J</div>
+                <div class="grid-itemIEC">K</div>
+                <div class="grid-itemIEC">L</div>
+                <div class="grid-itemIEC">M</div>
+                <div class="grid-itemIEC">N</div>
+            </div>
+            <h3>Dense</h3>
+            <div class="grid-containerIED">
+                <div class="grid-itemIED">A</div>
+                <div class="grid-itemIED">B</div>
+                <div class="grid-itemIED">C</div>
+                <div class="grid-itemIED">D</div>
+                <div class="grid-itemIED">E</div>
+                <div class="grid-itemIED">F</div>
+                <div class="grid-itemIED">G</div>
+                <div class="grid-itemIED">H</div>
+                <div class="grid-itemIED">I</div>
+                <div class="grid-itemIED">J</div>
+                <div class="grid-itemIED">K</div>
+                <div class="grid-itemIED">L</div>
+                <div class="grid-itemIED">M</div>
+                <div class="grid-itemIED">N</div>
+            </div>
+        </section>
+        <section>
+            <h2>min-max(), auto-fill y auto-fit</h2>
+            <p>
+                minmax(): <dd>
+                    Recibe dos parámetros (valores) para establecer el mínimo y el máximo que pueden tener los items.<br />
+                    grid-template-columns: repeat (2, minmax (100px, 1fr));<br />
+                    min-content: mínimo necesario en función del contenido.<br />
+                    max-content: máximo necesario en función del contenido.<br />
+                    auto-fill: Crea tantos grid-items vacios como quepan en el viewport respetando las medidas.<br />
+                    auto-fit: Elimina los grid items vacios que no estén ocupados.
+                </dd>
+            </p>
+            <h3>min max</h3>
+            <div class="grid-containerMM">
+                <div class="grid-itemMM">A</div>
+                <div class="grid-itemMM">B</div>
+                <div class="grid-itemMM">C</div>
+                <div class="grid-itemMM">D</div>
+                <div class="grid-itemMM">E</div>
+                <div class="grid-itemMM">F</div>
+            </div>
+            <h3>auto-fill auto-fit</h3>
+            <div class="grid-containerAF">
+                <div class="grid-itemAF">A</div>
+                <div class="grid-itemAF">B</div>
+                <div class="grid-itemAF">C</div>
+                <div class="grid-itemAF">D</div>
+            </div>
+        </section>
+        <section>
+            <h2>Alineamiento y order</h2>
+            <p>
+                Alineamiento: <dd>
+                    justify-items: Alinea los elementos horizontalmente respecto a la celda.<br />
+                    align-items: Alinea los elementos verticalmente respecto a la celda.<br />
+                    Admiten los valores:<br />
+                     -start<br />
+                     -end<br />
+                     -center<br />
+                     -strech (default)<br />
+                    place-items: Engloba las propiedades justify-items y align-items:<br />
+                    <code>place-items: align-items  justify-items;</code><br />
+                    justify-content: Alinea los elementos horizontalmente respecto del contenedor.<br />
+                    align-content: Alinea los elementos verticalmente respecto del contenedor.<br />
+                    Adminten los valores:<br />
+                     -start<br />
+                     -end<br />
+                     -center<br />
+                     -strech<br />
+                     -space-around<br />
+                     -space-between<br />
+                     -space-evenly<br />
+                    <code>place-content: align-content / justify-content;</code>
+                    Tenemos las mismas propiedades con self para los items.<br />
+                    justify-self<br />
+                    align-self<br />
+                    place-self<br />
+                    Admite los valores:<br />
+                     -start<br />
+                     -end<br />
+                     -center<br />
+                     -strech<br />
+                    Order funciona igual que en flexbox, por defecto todos los items tienen order 0.
+                </dd>
+            </p>
+            <div class="grid-containerAO">
+                <div class="grid-itemAO">A</div>
+                <div class="grid-itemAO">B</div>
+                <div class="grid-itemAO">C</div>
+                <div class="grid-itemAO">D</div>
+                <div class="grid-itemAO">E</div>
+                <div class="grid-itemAO">F</div>
+                <div class="grid-itemAO">G</div>
+                <div class="grid-itemAO">H</div>
+            </div>
+        </section>
+        <section>
+            <h2>Grid template areas</h2>
+            <div class="main">
+                <div class="header">Header</div>
+                <div class="aside">Aside</div>
+                <div class="body"> <p>
+                    Grid template areas, nos permite acomodar las cuadriculas por nombre y no por nombre.
+                    Ejemplo: <code>grid-template-areas:<br />
+                    "header header header"<br />
+                    "aside body body"<br />
+                    "footer footer ."<br /></code>Donde decimos que "header" ocupla la primera row y 3 columnas, aside esta en la segunda row y primera columna, mientras body ocupla la segunda row también pero la segnda y tercera columna y footer solo utiliza la ultima row y las dos primeras columnas. Con el "." al final le decimos que deje esa cuadricula basia. Luego asignamos esas hubicaciones con el nombre puesto en cada una y el estilo <code>grid-area: header(area-name);</code> al elemento que queramos.
+                </p> </div>
+                <div class="footer">Footer</div>
+            </div>
+        </section>
+        <section>
+            <h2>Grid lines</h2>
+            <div class="grid-containerGL">
+                <div class="grid-itemGL">A</div>
+                <div class="grid-itemGL">B</div>
+                <div class="grid-itemGL">C</div>
+                <div class="grid-itemGL">D</div>
+                <div class="grid-itemGL">E</div>
+                <div class="grid-itemGL">F</div>
+                <div class="grid-itemGL">G</div>
+                <div class="grid-itemGL">H</div>
+                <div class="grid-itemGL">I</div>
+            </div>
+        </section>
+        <section>
+            <h2>Grid anidados</h2>
+            <div class="grid-containerGA">
+                <div class="grid-itemGA">A</div>
+                <div class="grid-itemGA nested">
+                    <div class="grid-itemGA">1</div>
+                    <div class="grid-itemGA">2</div>
+                    <div class="grid-itemGA">3</div>
+                    <div class="grid-itemGA">4</div>
+                    <div class="grid-itemGA">5</div>
+                    <div class="grid-itemGA">6</div>
+                </div>
+                <div class="grid-itemGA">C</div>
+                <div class="grid-itemGA">D</div>
+                <div class="grid-itemGA">E</div>
+                <div class="grid-itemGA">F</div>
+            </div>
+        </section>
+        <section>
+            <h2>Shorthands y Grid track</h2>
+            <p>
+                Shorthands: <dd>
+                    grid: (sin soporte total)<br />
+                    <a href="https://developer.mozilla.org/es/docs/Web/CSS/grid">Mozilla</a><br />
+                    grid-template: Engloba <code>grid-template-columns</code>, <code>grid-template-rows</code> y <code>grid-template-areas</code><br />
+                    grid-gap: Engloba <code>grid-column-gap</code> y <code>grid-rows-gap</code><br />
+                    grid-column: Engloba <code>grid-column-start</code> y <code>grid-column-end</code><br />
+                    grid-row: Engloba <code>grid-row-start</code> y <code>grid-row-end</code>
+                </dd>
+            </p>
+            <div class="grid-containerST">
+                <div class="grid-itemST">A</div>
+                <div class="grid-itemST">B</div>
+                <div class="grid-itemST">C</div>
+                <div class="grid-itemST">D</div>
+                <div class="grid-itemST">E</div>
+                <div class="grid-itemST">F</div>
+                <div class="grid-itemST">G</div>
+                <div class="grid-itemST">H</div>
+                <div class="grid-itemST">I</div>
+            </div>
+        </section>
+    </article>
+</body>
+</html>

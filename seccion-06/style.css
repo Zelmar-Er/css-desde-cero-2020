@@ -1,0 +1,48 @@
+body{
+    background: #eee;
+}
+/* I */
+.title{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 8vmin; /*10 = 10%, vim = view port min*/
+    text-transform: capitalize;
+}
+.paragraph{
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    text-indent: 300px;
+    letter-spacing: 3px;
+}
+.paragraph span{
+    letter-spacing: 0.5px;
+}
+.link{
+    text-decoration: line-through;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background: rgba(204,47,204,0.6);
+}
+.boxItem1{
+    line-height: 100px;
+    text-align: center;
+}
+
+/* Google fonts y font-face */
+.title{
+    font-family: 'Style Script';
+}
+span{
+    font-family: Diplomata;
+}
+@font-face{
+    src: url(fonts/Admiration\ Pains.ttf);
+    font-family: 'fuenteDescargada';
+}
+.paragraph{
+    font-family: fuenteDescargada;
+}
+
+/* google icons */

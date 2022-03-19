@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Colores, sombras y degradados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1>Colores, sombras y degradados</h1>
+        <section>
+            <h2>Colores</h2>
+            <p>
+                Hay varias formas de dar color a los elementos. <dd>
+                    - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank">Palabras claves</a><br />
+                    - CurrentColor: Es la palabra clave que se puede usar en lugar de cualquier valor de color y úsara el valor ya sea establecido o heredado en la propiedad color.<br />
+                    - Hexadecimal: La notación hexadecimal tiene 16 valores, 0-1-2-3-4-5-6-7-8-9-A-B-C-D-E-F. Se escriben con un # al inicio y se pueden usar 3 o 6 valores. Si se usan 6 valores deben ir en parejas <code>#ffffff</code>, pero cuando las parejas tiene el mismo valor se suele obviar y se pone solo 3 valores <code>#fff</code>. El código hexadecimal se representa con los canales rgb de esta forma #rrggbb o #rgb. Utilizar el modo hexadecimal cuando se buscan colores especiales se queda corto si no utilizamos un preprocesador, ya que no podemos controloar la luminosidad, la saturación, etc.<br />
+                    Cuando los 3/6 valores son iguales es un color neutro, <code>#000</code> sería negro y <code>#fff</code> blanco, y todos los valores intermedios serían grices con mayor o menos luminosidad <code>#666</code>, <code>#aaa</code>.<br />
+                    - RGB: Es una función de color que recibe 3 valores separados por comas, siendo 0 el mínimo y 255 el máximo <code>rgb(0,0,0)</code> sería un negro y <code>rgb(255,255,255)</code> sería un blanco.<br />
+                    - RGBA: Es una variación de RGB con un cuarto valor que sería el canal alpha, con este color controlamos la opacidad. Sus valores van de 0 a 1, siendo 0 transparente y 1 opaco.<br />
+                    - HSL (hue, saturation, lightness): Es una función de color que nos permite controlar el tono, la saturación y la luminosidad. Es el modo de color que se recomienda para tener un control total sobre los colores.<br />
+                    Hue es el ángulo en la rueda cromática. Los valores van de 0 a 360 grados.<br />
+                    Saturación es la intencidad del color. Los valores van de 0 (gris) a 100% (color puro).<br />
+                    Luminosidad es la intencidad de la luz. Los valores van de 0 (negro) a 100%(blanco).<br />
+                    - HSLA: Exactamente igual que RGBA.
+                </dd>
+            </p>
+            <div class="box box-color">Color name</div>
+            <div class="box box-hexa">Hexadecimal</div>
+            <div class="box box-rgb">RGB</div>
+            <div class="box box-rgba">RGBA</div>
+            <div class="box box-hsl">HSL</div>
+            <div class="box box-hsla">HSLA</div>
+        </section>
+        <section>
+            <h2>Sombras</h2>
+            <p>
+                box-shadow, es una propiedad que crea una sombra del tamaño de la caja.<br />
+                box-shadow: h-offset, v-offset, blur, spread, color y inset|outset.<dd>
+                    h-offset: Es el desplazamiento horizontal de la sombra.<br />
+                    v-offset: Es el desplazamiento vertical de la sombra.<br />
+                    blur: Opcional, es la cantidad de desenfoque de la sombra.<br />
+                    spread: Opcional, es la extención de la sombra.<br />
+                    color: Opcional, color de la sombra, si no se especifica tomará el color del texto.<br />
+                    inset|outset: Opcional, determina si la sombra se dibuja por dentro o por fuera de la caja.<br />
+                    Con un valor ouset (defaul) los valores positivos añaden a la dereha y abajo, y los valores negativos la añaden a la izquierda y arriba.<br />
+                    Con un valor inset se invierten los valores, sería izquierda y arriba, y negativo derecha y abajo.<br />
+                    Ej: <code>box-shadow: 10px 10px 2px 5px red;</code><br />
+                    Sombras múltiples.<br />
+                    Se añaden las sombras separadas por comas.
+                    Ej: <code>box-shadow: 10px 10px 2px 5px red, -10px -10px 2px 5px blue;</code>
+                </dd>
+                text-shadow: h-offset, v-offset, blur y color. <dd>
+                    Sombras múltiples.<br />
+                    Se añaden las sombras separadas por comas.
+                </dd>
+            </p>
+            <div class="box box-shadow"><p class="text-shadow">Text Shadow</p></div>
+            <div class="box box-shadow1"><p class="text-shadow1">Text Shadow</p></div>
+        </section>
+        <section>
+            <h2>Degradados</h2>
+            <p>
+                Un degradado es una tansición entre un color y otro. El navegador calculará todos los pasos intermedios entre los colores del degradado.<br />
+                Es un valor de background-image. Existen dos tipos de degradado: lineales y radiales.<br />
+                Degradados lineales: <dd>
+                    linear-gradient([direction], color1, color2...)<br />
+                    backgraund-image: linear-gradient( red, blue);<br />
+                    La dirección es opcional, se puede establecer con un ángulo( 20deg, 190deg...) o estableciendo la dirección del degradado con "to top | right | bottom | left | top left | top right | bottom left | bottom right"<br />
+                    background-image: liner-gradient( to top, red, blue);<br />
+                    Si no establecemos paradas de color, el navegador dividirá el espacio disponible entre los colores que tenga que pintar.<br />
+                    2 colores 0% 100%, 3 colores 0 50% 100%.<br />
+                    Para establecer las paradas se puede usar cualquier medida, px, em, %...<br />
+                    Si las paradas/inicios empiezan en el mismo sitio se genera un corte sólido, background-image: linear-gradient( red 50%, blue 50%);<br />
+                    linear-gradient( direction, color1 stop, color2 start[ stop]);<br />
+                    background-image: linear-gradient( to top, red 50%, blue 50% 70%, green 75%);
+                </dd>
+                Degradados radiales: <dd>
+                    Funcionan de una forma similar a los degradados lineales.<br />
+                    background-image: radial-gradient( [shape], red, blue);<br />
+                    background-image: radial-gradient( red, blue);<br />
+                    Por defecto, shape se ajustará al tamaño de la caja, pero podemos establecer si queremos un círculo o una elípse y definir el radio o los radios.<br />
+                    background-image: radial-gradient( circle 100%, red, blue);<br />
+                    background-image: radial-gradient( ellipse 100px 50px, red, blue);<br />
+                    Si no establecemos un punto de origen, el punto 0 0 será el centro del elementom. Para establecer el punto de origen podemos hacerlo en medidas o con palabras clave. Con la palabra "at" establecemos el punto de origen. Los valores que aceptan son: top | right | bottom | left | center | closset-side | closset-corner | farthest-side | farthest-corner.<br />
+                    background-image: radial-gradient( circle 100px at top left, red 50%, blue 50%);<br />
+                    Si establecemos un solo valor, el segundo por defecto será center.<br />
+                    background-image: radial-gradient( circle 100px at top , red 50%, blue 50%);
+                </dd>
+            </p>
+            <div class="box linear">Linear</div>
+            <div class="box solid">Solid</div>
+            <div class="box radial">Radial</div>
+            <div class="box radial2">Radial</div>
+            <div class="box repeticion">Repetición</div>
+            <div class="box repeticion2">Repetición2</div>
+        </section>
+    </article>
+</body>
+</html>

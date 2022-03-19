@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Position</title>
+    <link rel="stylesheet" href="css/position.css">
+</head>
+<body>
+    <div class="sticky">Sticky</div>
+    <article>
+        <h1>Position</h1>
+        <section>
+            <h2>Introducción</h2>
+            <p>
+                La propiedad position nos permite posicionar los elementos. Hay algunos que debéis conocer para entender positon.<br />
+                Flujo de renderizado -> Por norma general los elementos se dibujan de izquierda a derecha y de arriba abajo. El punto 0,0 de los elementos, por norma general, es la esquina superior izquierda.<br />
+                Espacio reservado -> Es el espacio que tiene un elemento asignado en el navegador.<br />
+                Elemento posicionado -> Esto significa que el elemento tiene la propiedad position con un valor distinto de "static", que es el valor que tiene esta propiedad por defecto.<br />
+                Stocking context -> Contexto de apilamiento. Es el orden en el que se apilarán las cajas que se superponen, dentro del mismo contenedor.<br />
+                Al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los elementos en los 3 ejes.
+                <dd>
+                    top -> El elmento se moverá desde la parte superior la distacia que le hayamos indicado.<br />
+                    right -> El elmento se moverá desde la parte derecha la distacia que le hayamos indicado.<br />
+                    bottom -> El elmento se moverá desde la parte inferior la distacia que le hayamos indicado.<br />
+                    left -> El elemento se moverá desde la parte izquierda la distacia que le hayamos indicado.<br />
+                    z-index -> Nos permite mover el elmento en el contexto de apilamiento (eje z).<br />
+                    NOTA: Si a un elemento le declaramos la propiedad top y/o left, las propiedades bottom y/o right no funcionarán.
+                </dd>
+            </p>
+            <p>
+                Los posibles valores que le podemos dar a position son:
+                <dd>
+                    static -> Es el valor que tiene por defecto un elemento, con este valor el elemento NO ESTÁ POSICIONADO y por lo cual no podremos moverlo.<br />
+                    relative -> El elemento mantendrá su posición y medidas de flujo de renderizado y mantendrá su espacio reservado. Si lo movemos lo hará usando su posición en el html como punto de referencia.<br />
+                    absolute -> El elmento perderá sus medidas y su espacio reservado. Si lo movemos usará el elmento padre posicionado como referencia. Si no tiene ninguno, usará el elmento html de referencia.<br />
+                    fixed -> El elemento perdera sus medidas y su espacio reservado. Si lo movemos usará el elemento html de referencia, y además se quedará fijo en esa posición aunque hagamos scroll.<br />
+                    sticky -> Es una mescla de position relative y fixed. Con este tipo de posicionamiento los valores top, left, bottom y right no sirven para mover el elemento, si no para indicarle en qué punto pasará a tener un comportamiento de posicionamiento fixed, hasta llegar a ese punto se comportará como si tuviera relative.
+                </dd>
+            </p>
+        </section>
+        <section>
+            <h2>Position Relative</h2>
+            <div class="box relative-1"></div>
+            <div class="box relative-2"></div>
+        </section>
+        <section>
+            <h2>Pisition Absolute</h2>
+            <div class="absolute-container">
+                <div class="abs-box absolute-1">box 1</div>
+                <div class="abs-box absolute-2">box 2</div>
+                <div class="abs-box absolute-3">box 3</div>
+            </div>
+        </section>
+        <section>
+            <div class="fixed">Position<br /> Fixed</div>
+        </section>
+        <section class="section-sticky">
+            <h2>Position Sticky</h2>
+            <br>
+                Sticky -> Es una mezcla de position relative y "fixed". Con este tipo de posicionamiento los valores top, right, bottom y left no sirven para mover el elmento, si no para indicarle en que punto pasará a tener un compoertamiento de posicionamiento similar a fixed, hasta llegar a este punto se comportará como si no tuviera posicionamineto, aunque sí contará como posicionado si nesecitáramos colocar otro elemento respecto a él.
+            </p>
+        </section>
+        <section>
+            <h2>Z index</h2>
+            <p>
+                z-index: Es la propiedad que nos permite ordenar los elementos superpuestos para controlar cual se coloca por delante y cual por detrás.<br />
+                El contenedor padre no puede ir delante de sus hijos, pero estos si pueden ir detras.
+            </p>
+            <div class="absolute-container">
+                <div class="abs-box z-box1"></div>
+                <div class="abs-box z-box2">z-index 10</div>
+                <div class="abs-box z-box3">z-index -1</div>
+            </div>
+        </section>
+        <section class="section-sticky">
+            <h2>Stacking context</h2>
+            <p>
+                El stacking context o contexto de apilamiento es el espacio donde nuestros elementos se van a ir apilando para que unos queden por detrás y otros por delante.<br />
+                El orden del stacking context es (de adelante a atrás):<dd>
+                    .Elementos posicionados con un z-index de 1 o más.<br />
+                    .Elemantos posicionados sin z-index o z-index: auto.<br />
+                    .Elementos no posicionados.<br />
+                    .Elementos con z-index negativo.
+                </dd>
+            </p>
+        </section>
+    </article>
+    <article>
+        <section>
+            <h2>Ordenar las propiedades</h2>
+            <p>
+                Ordernar las propiedades es importante, no existe ninguna especificación sobre como hacerlo, pero la mayoría de expertos coinciden en los mismos puntos.
+                <div>
+                    1 - Propiedades de posicionamiento.<br />
+                    2 - Propiedades del box model.<br />
+                    3 - Propiedades de texto.<br />
+                    4 - Propiedades visuales (colores, bordes, background...).<br />
+                    5 - El resto.
+                </div>
+            </p>
+            <p>
+                Ejemplo: <code>
+                    etiqueta {<br />
+                        /* Position */<br />
+                        (position, top, left)<br />
+                        /* Box Model */<br />
+                        (display, width, height, padding, margin)<br />
+                        /* Text */<br />
+                        (font-size, text-align)<br />
+                        /* Visual */<br />
+                        (color, border, border-radius)<br />
+                        /* Other */<br />
+                        (opasiti, transform)<br />
+                    }
+                </code>
+            </p>
+        </section>
+    </article>
+    <article>
+        <h1>Medidas</h1>
+        <section>
+            <hgroup>
+                <h2>Medidas absolutas y relativas</h2>
+                <h3>Las medidas en CSS se pueden agrupar en 2 grupos, absolutas y relativas</h3>
+            </hgroup>
+            <p>
+                Las medidas absolutas NO CAMBIAN y siempre mantendrán su tamaño independientemente del dispositivo o la interacción del usuario.<br />
+                La más usada es px (pixeles) cuya medida es 1/94 de lin, pero existen otras como:<dd>
+                    cm(centimetros) -> 1cm = 96px/2,54<br />
+                    mm(milimetros) -> 1mm = 1/10 de 1cm<br />
+                    Q(cuarto de milimetro) -> 1Q = 1/40 de 1cm<br />
+                    in(inches, pulgadas) -> 1in = 2,54cm = 96px<br />
+                    pc(picas) -> 1pc = 1/16 de 1in<br />
+                    pt(puntos) 1pt = 1/72 de 1in
+                </dd>
+            </p>
+            <p>
+                Las medidas relativas SIEMPRE dependen de un contexto son las se recomienda utilizar en la gran mayoría de ocaciones porque nos van a permitir que todos los elementos escalen proporcionalmente.<br />
+                Los más usados son em, rem, %, vw, vh, vmin y vmax aunque tenemos otras como:<dd>
+                    ex -> Altura x de la fuente del elemento.<br />
+                    Ch -> La medida del ancho del glifo "0" de la letra del elemento.<br />
+                    Lh -> Altura de la línea del elemento.
+                </dd>
+            </p>
+        </section>
+        <section>
+            <h2>Em y rem</h2>
+            <p>
+                rem -> Corresponde a la medida de la "m" de la raiz de documento (html, 16px por defecto).<br />
+                em -> Corresponde a la medida de la "m" del contexto dinde nos encontremos.<br />
+                El standar del tamaño de fuente por defecto de la raiz del documento es 16px, y NO ES RECOMENDABLE MODIFICARLO.<br />
+                NOTA: Tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de fuente)
+            </p>
+        </section>
+        <section>
+            <h2>Width con % y auto</h2>
+            <p>
+                % -> Cuando usamos porcentage usamos de referencia el tamaño del contenedor y el navegador calcula ese porcentage. Esto no ocurre cuando usamos transform.<br />
+                auto -> Cuando usamos le pedimos al navegador que calcule en funcion del espacio disponible.
+            </p>
+        </section>
+        <section>
+            <h2>Height con % y auto</h2>
+            <p>
+                % -> Cuando estamos dentro de un contenedor, este tiene que tener un alto declarado, si no no podrá calcular el porcentaje. Si se le aplica una medida con porcentaje se sustituirá automaticamente por auto.<br />
+                auto -> Cuando utilizamos auto el alto lo calculará el navegador en base al contenido del elemento.
+                <span>
+                    NOTA: height es una propiedad que tenéis que utilizar con mucho cuidado. Si no es necesario establecer un alto, dejad que el contenido sea el que decida el alto del elemento.
+                </span>
+            </p>
+        </section>
+        <section>
+            <h2>Medidas Relativas al Viewport</h2>
+            <p>
+                Viewport: Es el área útil donde se mostrará la página web. IMPORTANTE, tened en cuneta que es el area visible sin hacer scroll.<br />
+                Podemos usar el viewport con medida de varias formas: <dd>
+                    vw -> Viewport Widht, hace referencia al ancho del viewport.<br />
+                    vh -> Viewport Height, hace referencia al alto del viewport.<br />
+                    vmax -> Utiliza el valor más grande entre el ancho y alto del viewport.<br />
+                    vmin -> Utiliza el valor más pequeño entre el ancho y alto del viewport.<br />
+                    1vw = 1% del ancho del viewport.<br />
+                    1vh = 1% del alto del viewport.<br />
+                    1vmin = 1% del valor que sea más pequeño del viewport.<br />
+                    1vman = 1% del valor que sea más grande del viewport.
+                </dd>
+            </p>
+            <div class="containerVP">
+                <header class="headerVP">Header</header>
+                <div class="boxVP">
+                    <div class="box-childrenVP">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Min-Width, Min-Height,
+                Max-Width y Max-height</h2>
+                <p>
+                    Limitadores al ancho y al alto:<br />
+                    Cuando establecemos un width y/o un height con una medida que es relativa, es posible que no queramos que se respete esa medida en todos los casos.<br />
+                    Para ello tenemos propiedades que limitan esas medidas: <dd>
+                        min-width: Indica el ancho minimo que puede alcanzar el elemento.<br />
+                        max-width: Indica el ancho máximo que puede alcanzar el elemento.<br />
+                        min-height: Indica el alto minimo que puede alcanzar el elemento.<br />
+                        max-height: Indica el alto máximo que puede alcanzar el elemento.
+                    </dd>
+                </p>
+                <div class="box-Min-Max"></div>
+        </section>
+    </article>
+</body>
+</html>

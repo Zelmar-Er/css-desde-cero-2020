@@ -1,0 +1,144 @@
+body{
+    background-color: #eee;
+}
+/* Pseudoelementos */
+.title::first-letter{
+    font-size: 2em;
+    font-family:cursive;
+    text-shadow:  2px 2px 3px gray;
+}
+
+.text::first-line{
+    font-size: 1.5em;
+    color: rgba(234,46,156,0.6);
+    text-shadow: 3px 4px 7px rgba(1, 178, 200, 0.9);
+}
+
+.text::selection{
+    color: white;
+    background: red;
+}
+
+.dolar::before{
+    content: 'u$d';
+}
+
+.dolar::after{
+    content: '.00';
+}
+
+/* Pseudoclases I */
+
+.noVisitado:link{
+    color:darkgreen;
+}
+
+.visitado:visited{
+    color:rgb(118, 212, 110);
+}
+
+.active{
+    background-color:#eee;
+    color:blue;
+    border-style: none;
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+.active:active{
+    transform: scale(0.9);
+    background-color:blue;
+    color:#eee;;
+    border: 2px solid rgb(0, 102, 255);
+}
+
+.hover:hover{
+    background-color:hotpink;
+    color:rgba(30, 54, 42, 0.609)
+}
+
+.focus:focus{
+    background-color:burlywood;
+    border: 1px solid blueviolet;
+}
+
+.header{
+    position: sticky;
+    top: 0px;
+    width: 80%;
+    margin: auto;
+    background-color:cadetblue;
+    height: 32px;
+    padding-top: 10px;
+    text-align:center;
+}
+.top:target{
+    padding-top: 40px;
+}
+
+.span:lang(es){
+    color:darkblue;
+}
+.span:lang(en){
+    color:darkmagenta;
+}
+
+/* Pseudoclases II */
+
+.input:enabled{
+    background: rgba(34,64,92,0.9);
+}
+.input:disabled{
+    background: rgba(95,83,156,0.7);
+}
+.input:checked{
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+}
+.input:in-range{
+    background: lightseagreen;
+}
+.input:out-of-range{
+    background: orange;
+}
+.input:optional{
+    background:palegreen;
+}
+.input:required{
+    background:rebeccapurple;
+}
+.input:valid{
+    background: green;
+}
+.input:invalid{
+    background: red;
+}
+
+/* Pseudoclases III */
+
+.parrafo{
+    padding: 0.5em;
+    background:rgb(0, 102, 255);
+}
+.parrafo:empty{
+    all: unset;
+}
+.parrafo:first-child::after{
+    content: ' Primer hijo';
+}
+.parrafo:last-child::after{
+    content: ' Ultimo hijo';
+}
+.parrafo:nth-child(odd)::before{
+    content: ' Impar ';
+}
+.parrafo:nth-child(even)::before{
+    content: ' Par '
+}
+.parrafo:nth-child(3)::after{
+    content: ' Parrafo 3';
+}
+.parrafo:nth-child(4n){
+    background:rgb(118, 212, 110);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables y Background</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1>Variables y background</h1>
+        <section>
+            <h2>Variables CSS (custom properties)</h2>
+            <p>
+                Una variable es un espacio en memoria en el que guardamos un valor para poder utilizarlo o modificarlo.<br />
+                Las variables necesitan estar dentro de un selector.<br />
+                Tienen herencia y cascada.<br />
+                Existen varibles globales y locales, eso dependerá del selector el que la declaremos.<br />
+                Las varibles CSS no son lo mismo que las variables SCSS.<br />
+                Su sintaxis: <dd>
+                    <code>
+                        selector{<br />
+                        --nombreVariable: valor;<br />
+                    }<br />
+                    propiedad: var(--nombreVariable)
+                    </code>
+                </dd>
+            </p>
+            <div>
+                <h3 class="title">Prueba</h3>
+                <article class="main-article">
+                    <p class="parrafo">Párrafo principal</p>
+                </article>
+                <article class="article">
+                    <p class="parrafo">Otro párrafo</p>
+                </article>
+                check<input type="checkbox" class="check">
+                <div class="box"></div>
+            </div>
+        </section>
+        <section>
+            <h2>Background</h2>
+            <p>
+                Es una propiedad que nos permite darle fondo a las cajas.<br />
+                La propiedad background es un shorthand, la lista de propiedades que incluye background son:<br />
+                <dd>
+                    .background-color: Nos permite establecer el color de fondo.<br />
+                    .background-image: Nos permite establecer una imagen de fondo.<br />
+                    .background-repeat: Nos permite establecer si un fondo se repite o no.<br />
+                    .background-position: Nos permite establecer la posición del background.<br />
+                    .background-size: Nos permite establecer el tamaño del background.<br />
+                    .background-origin: Nos permite establecer desde donde se empezará a dibujar el fondo.<br />
+                    .background-clip: Nos permite establecer en qué parte de la caja se dibujará el fondo.<br />
+                    .background-attachment: Nos permite establecer si el backgroun es relativo a la caja o al viewport.
+                </dd>
+            </p>
+            <div class="background color">Color</div>
+            <div class="background image">Image</div>
+            <div class="background size">Size</div>
+            <div class="background repeat">Repeat</div>
+            <div class="background position">Position</div>
+            <div class="background origin"><p>Origin<br /> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quibusdam ullam asperiores ea in. Accusantium dolorem nesciunt ipsa provident voluptatum, reiciendis iste minima quod, eius quas sed enim nulla porro.</p></div>
+            <div class="background clip"><p>Clip<br /> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quibusdam ullam asperiores ea in. Accusantium dolorem nesciunt ipsa provident voluptatum, reiciendis iste minima quod, eius quas sed enim nulla porro.</p></div>
+            <div class="background attachment">Attachment</div>
+            <div class="background multiple">Multiple</div>
+        </section>
+    </article>
+</body>
+</html>
